@@ -1,0 +1,11 @@
+#
+# install
+#
+
+cd "$(dirname "$0")"/..
+
+# environment
+. bin/profile
+
+# get deps
+# e.g. `npm install`, `bundle install`, etc
