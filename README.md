@@ -41,7 +41,7 @@ After the required environmental information is collected, the scripts are prett
 cd <your-service>
 git clone https://github.com/jessetane/s-control
 mv s-control bin
-rm bin/.gitignore bin/*.md
+rm bin/*.md
 ```
 
 ## License
