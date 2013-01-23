@@ -25,4 +25,4 @@ sleep 0.5
 
 # are we up?
 bin/status > /dev/null
-[ $? == 0 ] && echo "$NAME started successfully" || (echo "$NAME failed to start" && exit 1)
+[ $? == 0 ] && echo "$NAME started successfully" || (echo "$NAME failed to start" > /dev/stderr && exit 1)
