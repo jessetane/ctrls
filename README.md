@@ -1,12 +1,10 @@
-```
-                                __               __ 
- .-----.______.----.-----.-----.|  |_.----.-----.|  |
- |__ --|______|  __|  _  |     ||   _|   _|  _  ||  |
- |_____|      |____|_____|__|__||____|__| |_____||__|
+```              
+                     __               __ 
+  .----.-----.-----.|  |_.----.-----.|  |.-----.
+  |  __|  _  |     ||   _|   _|  _  ||  ||__ --|
+  |____|_____|__|__||____|__| |_____||__||_____|
 
 ```
-This is a dumb name.
-
 ## What
 Controls for services. The idea is to allow a deploy tool to start, stop, restart and install dependencies for services via remote ssh commands.
 
@@ -39,9 +37,8 @@ After the required environmental information is collected, the scripts are prett
 ## Install
 ```bash
 cd <your-service>
-git clone https://github.com/jessetane/s-control
-mv s-control bin
-rm bin/*.md
+git clone https://github.com/jessetane/controls bin
+rm -rf ./bin/*.md bin/.git
 ```
 
 ## License
