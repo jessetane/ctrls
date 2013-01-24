@@ -10,7 +10,8 @@ cd "$(dirname "$0")"/..
 # if we have mpid and pid files, ask mon what's up
 if [[ -e mpid && -e pid ]]
 then
-  echo $(mon --pidfile pid --status)
+  mon --pidfile pid --status
+  kill -0 $(cat mpid) > /dev/null 2>&1
 else
   
   # otherwise just assume the service is stopped

@@ -8,7 +8,7 @@ cd "$(dirname "$0")"/..
 . bin/profile
 
 # require $NAME
-[ -z "$NAME" ] && echo '$NAME is not defined' > /dev/stderr && exit 1
+[ -z "$NAME" ] && echo '$NAME is not defined' >&2 && exit 1
 
 STATUS=0
 
@@ -24,7 +24,7 @@ then
 else
   
   # already stopped, that's an error
-  echo "$NAME already stopped" > /dev/stderr && STATUS=1
+  echo "$NAME already stopped" > /dev/null && STATUS=1
 fi
 
 # remove the mpid & pid no matter what
