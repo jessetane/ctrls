@@ -24,7 +24,7 @@ then
 else
   
   # already stopped, that's an error
-  echo "$NAME already stopped" > /dev/null && STATUS=1
+  echo "$NAME already stopped" >&2 && STATUS=1
 fi
 
 # remove the mpid & pid no matter what

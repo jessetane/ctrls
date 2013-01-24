@@ -8,8 +8,8 @@ cd "$(dirname "$0")"/..
 . bin/profile
 
 # require $NAME and $RUN
-[ -z "$NAME" ] && echo '$NAME is not defined' > /dev/null && exit 1
-[ -z "$RUN" ] && echo '$RUN is not defined' > /dev/null && exit 1
+[ -z "$NAME" ] && echo '$NAME is not defined' >&2 && exit 1
+[ -z "$RUN" ] && echo '$RUN is not defined' >&2 && exit 1
 
 # bail if running
 bin/status > /dev/null && echo "$NAME is already running" >&2 && exit 1
