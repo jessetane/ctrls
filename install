@@ -8,4 +8,4 @@ cd "$(dirname "$0")"/..
 . bin/profile
 
 # get deps
-# e.g. `npm install`, `bundle install`, etc
+# e.g. `pip install`, `npm install`, `bundle install`, etc
