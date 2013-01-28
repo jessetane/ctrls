@@ -1,11 +1,7 @@
 #
-# installer for https://github.com/jessetane/ctrls - warning, this script deletes itself!
+# installer for https://github.com/jessetane/ctrls
 #
 
-# get the repo
 git clone https://github.com/jessetane/ctrls ctrls-temp
 mv ctrls-temp/lib ctrls
 rm -rf ctrls-temp
-
-# delete self
-rm $0
