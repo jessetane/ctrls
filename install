@@ -1,11 +1,11 @@
 #
-# install
+# installer for https://github.com/jessetane/ctrls - warning, this script deletes itself!
 #
 
-cd "$(dirname "$0")"/..
+# get the repo
+git clone https://github.com/jessetane/ctrls ctrls-temp
+mv ctrls-temp/lib ctrls
+rm -rf ctrls-temp
 
-# environment
-. bin/profile
-
-# get deps
-# e.g. `pip install`, `npm install`, `bundle install`, etc
+# delete self
+rm $0

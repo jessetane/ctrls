@@ -2,10 +2,11 @@
 # status
 #
 
-cd "$(dirname "$0")"/..
+# cd into parent dir
+cd "$(dirname "$0")" && cd $(pwd)/..
 
 # environment
-. bin/profile
+. variables
 
 # if we have mpid and pid files, ask mon what's up
 if [[ -e mpid && -e pid ]]

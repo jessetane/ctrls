@@ -2,10 +2,11 @@
 # stop
 #
 
-cd "$(dirname "$0")"/..
+# cd into parent dir
+cd "$(dirname "$0")" && cd $(pwd)/..
 
 # environment
-. bin/profile
+. variables
 
 # require $NAME
 [ -z "$NAME" ] && echo '$NAME is not defined' >&2 && exit 1
