@@ -22,10 +22,9 @@ Just some scaffolding for controlling a service with [mon(1)](https://github.com
 	* `ctrls/stop`
 
 ## Usage
-Clone the repo and check out the examples.
+Clone the repo and check out the example.
 
 ## Install
-Trust me?  
 `curl https://raw.github.com/jessetane/ctrls/master/install | sh`
 
 ## License

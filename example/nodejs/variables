@@ -4,6 +4,6 @@ NAME="basic-service"
 # $RUN is the shell command needed to start your program
 RUN="node service.js"
 
-# export any environment variables needed by the service itself
+# export any variables needed by the service itself
 export PORT="8080"
 export RESPONSE="hello world"
