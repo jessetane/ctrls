@@ -2,8 +2,20 @@
 # installer for https://github.com/jessetane/ctrls
 #
 
-git clone https://github.com/jessetane/ctrls ctrls-temp
-mv ctrls-temp/lib ctrls
-rm -rf ctrls-temp
-cd ctrls
-git checkout pdx
+# vars
+REPO="https://github.com/jessetane/ctrls"
+BRANCH="pdx"
+
+# temp dir
+TMP="tmp$(date +%s)"
+mkdir "$TMP" && cd $_
+
+# get repo/branch
+git init
+git fetch "$REPO" "$BRANCH":refs/remotes/origin/"$BRANCH"
+git checkout "$BRANCH"
+
+# cleanup
+cd ..
+mv "$TMP"/lib ctrls
+rm -rf "$TMP"
