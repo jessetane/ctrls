@@ -5,3 +5,5 @@
 git clone https://github.com/jessetane/ctrls ctrls-temp
 mv ctrls-temp/lib ctrls
 rm -rf ctrls-temp
+cd ctrls
+git checkout pdx
