@@ -23,7 +23,7 @@ ctrls/status > /dev/null && echo "$FULL_NAME is already running" >&2 && exit 1
 echo -e "\n"$(date)" starting..." >> log
 
 # pdx
-export PORT=$(node_modules/.bin/pdx register $NAME)
+export PORT=$(node_modules/.bin/pdx register $FULL_NAME)
 
 # start the service
 mon -d -p pid -m mpid -l log "$RUN"
