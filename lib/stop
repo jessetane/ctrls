@@ -8,8 +8,12 @@ cd "$(dirname "$0")" && cd $(pwd)/..
 # environment
 . variables
 
-# require $NAME
+# require $NAME & $VERSION
 [ -z "$NAME" ] && echo '$NAME is not defined' >&2 && exit 1
+[ -z "$VERSION" ] && echo '$VERSION is not defined' >&2 && exit 1
+
+# versioned name
+FULL_NAME="$NAME@$VERSION"
 
 STATUS=0
 
@@ -21,14 +25,14 @@ then
   echo -e $(date)" stopping..." >> log
   
   # SIGTERM mon and the service should go down with it gracefully
-  kill $(cat mpid) && echo "$NAME stopped"
+  kill $(cat mpid) && echo "$FULL_NAME stopped" && node_modules/.bin/pdx unregister "$FULL_NAME"
 else
   
   # already stopped, that's an error
-  echo "$NAME already stopped" >&2 && STATUS=1
+  echo "$FULL_NAME already stopped" >&2 && STATUS=1
 fi
 
-# remove the mpid & pid no matter what
+# always remove mpid & pid
 rm mpid
 rm pid
 
